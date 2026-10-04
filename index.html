@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sude Bahar Demir – Pharmaceutical Biotechnology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef4ef;--paper:#fbfdfa;--ink:#10291f;--mute:#4f6a5e;--green:#1f8a6b;--mars:#c4553a;--line:#cfe0d5;--chip:#dcefe4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1f19;--paper:#142a22;--ink:#e6f2ea;--mute:#9bb8aa;--green:#4cc9a0;--mars:#e2795c;--line:#27463a;--chip:#1d3b30}}
+:root[data-theme="dark"]{--bg:#0d1f19;--paper:#142a22;--ink:#e6f2ea;--mute:#9bb8aa;--green:#4cc9a0;--mars:#e2795c;--line:#27463a;--chip:#1d3b30}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "Public Sans",system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:560px;margin:0 auto;padding:20px 18px 48px}
+.tabs{display:flex;gap:6px;background:var(--chip);padding:4px;border-radius:999px;width:max-content;margin:0 auto 24px}
+.tabs button{border:0;background:none;color:var(--mute);font:500 14px "Public Sans",sans-serif;padding:8px 16px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--paper);color:var(--ink)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.view[hidden]{display:none}
+h1,h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;margin:0}
+/* dish motif */
+.dish{position:relative;width:120px;height:120px;flex:none}
+.dish i{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--green)}
+.dish i:nth-child(2){inset:14px;opacity:.55}
+.dish i:nth-child(3){inset:30px;opacity:.3}
+.orbit{position:absolute;inset:0;animation:spin 24s linear infinite}
+.orbit b{position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--mars)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.orbit{animation:none}}
+/* card */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px 24px;max-width:360px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.card h1{font-size:38px;line-height:1.02}
+.role{margin:6px 0 0;color:var(--green);font-weight:600;font-size:15px}
+.tag{margin:0;color:var(--mute);font-size:14px}
+.contact{list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:grid;gap:8px;font-size:14px}
+.contact span{color:var(--mute);display:inline-block;width:64px}
+.contact a{text-decoration:none;word-break:break-all}
+.qrrow{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+#qr{background:#fff;padding:12px;border-radius:14px;width:120px;height:120px;flex:none;display:flex;align-items:center;justify-content:center;font-size:11px;color:#555;text-align:center;line-height:0}
+#qr canvas{display:block!important;width:96px!important;height:96px!important}
+#qr img{display:none!important}
+.qrrow p{margin:0;font-size:13px;color:var(--mute)}
+.note{max-width:360px;margin:14px auto 0;font-size:13px;color:var(--mute);text-align:center}
+/* page */
+.hero{display:flex;gap:18px;align-items:center;margin-bottom:28px}
+.hero h1{font-size:44px;line-height:1}
+.hero .dish{width:96px;height:96px}
+.hero .dish i:nth-child(2){inset:11px}.hero .dish i:nth-child(3){inset:24px}
+.lead{font-size:17px;margin:0 0 18px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.cta a{background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:12px}
+.cta a.alt{background:var(--chip);color:var(--ink)}
+section{margin-top:32px}
+h2{font-size:28px;margin-bottom:10px}
+.role-item{padding:14px 0;border-top:1px solid var(--line)}
+.role-item h3{margin:0;font-size:16px;font-weight:600}
+.role-item .when{font-size:13px;color:var(--mars);font-weight:600;margin:2px 0 6px}
+.role-item ul{margin:0;padding-left:18px;color:var(--mute);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;padding:0;list-style:none}
+.chips li{background:var(--chip);border-radius:999px;padding:5px 12px;font-size:14px}
+.group{font-size:14px;color:var(--mute);margin:14px 0 6px;font-weight:600}
+.proj{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.proj li{padding-left:14px;border-left:3px solid var(--mars)}
+.proj b{display:block}
+footer{margin-top:40px;font-size:13px;color:var(--mute)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="view" id="v2">
+  <div class="hero">
+    <div class="dish" aria-hidden="true"><i></i><i></i><i></i><div class="orbit"><b></b></div></div>
+    <div>
+      <h1>Sude Bahar Demir</h1>
+      <p class="role">Biology student · Pharmaceutical Biotechnology</p>
+    </div>
+  </div>
+  <p class="lead">I study how drugs and bacteria behave when gravity is taken out of the picture: antimicrobial resistance and drug interactions in simulated microgravity, with bioinformatics and lab work.</p>
+  <div class="cta">
+    <a href="mailto:sudebahardemir@gmail.com">Email me</a>
+    <a class="alt" href="tel:+905455624051">Call</a>
+    <a class="alt" href="https://www.linkedin.com/in/sude-bahar-demir-b34841335">LinkedIn</a>
+  </div>
+
+  <section>
+    <h2>Current work</h2>
+    <div class="role-item">
+      <h3>Pharmaceutical Biotechnology Researcher, MoEP (Mars on Earth Project)</h3>
+      <p class="when">2025 – present</p>
+      <ul>
+        <li>Use simulated microgravity as a stress environment to test drug efficacy and antimicrobial resistance.</li>
+        <li>Bioinformatic research on cellular responses that Earth's gravity masks.</li>
+        <li>Combine molecular insights with computational tools to design resilient drug delivery systems.</li>
+      </ul>
+    </div>
+    <div class="role-item">
+      <h3>R&amp;D Project Leader &amp; Department Head, UBİTEK (ESTÜ)</h3>
+      <p class="when">2025 – present</p>
+      <ul>
+        <li>Lead R&amp;D workflows for biotechnology projects and manage multidisciplinary teams.</li>
+        <li>Mentor members in PCR, DNA isolation and data analysis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <ul class="proj">
+      <li><b>IAC 2026 Project Lead</b>Bioinformatic analysis of antimicrobial resistance in microgravity.</li>
+      <li><b>Erasmus+ Participant, Poland (2021)</b>'Culture Shadow', a project on intercultural communication.</li>
+      <li><b>Community Volunteering Orientation (TOG)</b>Training in social responsibility and project ethics.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <p class="group">Lab</p>
+    <ul class="chips"><li>PCR</li><li>DNA isolation</li><li>Gel electrophoresis</li><li>Sterile techniques</li><li>Microbiology</li></ul>
+    <p class="group">Bioinformatics</p>
+    <ul class="chips"><li>AutoDock</li><li>Discovery Studio</li><li>KEGG</li><li>IGV</li><li>Sequence analysis</li></ul>
+    <p class="group">Languages</p>
+    <ul class="chips"><li>Turkish (native)</li><li>English (full professional)</li><li>German (elementary)</li></ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="role-item">
+      <h3>B.Sc. in Biology, Eskisehir Technical University</h3>
+      <p class="when">2022 – 2027</p>
+    </div>
+  </section>
+
+  <footer>Certified for use of animals in experiments (ESOGÜSEM).</footer>
+</div>
+</div>
+
+</body>
+</html>
